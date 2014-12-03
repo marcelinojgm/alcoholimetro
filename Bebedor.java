@@ -8,6 +8,7 @@
 public class Bebedor
 {
     // instance variables - replace the example below with your own
+    private String nombre;
     private float alcoholEnSangre;
     private int   nivelMaximoAlcohol;
 
@@ -42,6 +43,28 @@ public class Bebedor
         else
         {
             alcoholEnSangre = alcoholEnSangre + nombreCopa.getPorAlcohol();
+        }
+    }
+    
+    /**
+     * realiza una pregunta al borracho
+     */
+    public void preguntar(String pregunta)
+    {
+        if((alcoholEnSangre >= nivelMaximoAlcohol)|| pregunta.contains(nombre))
+        {
+            System.out.print("¡¡¡¡¡¡¡¡" + pregunta + "!!!!!!!!");
+        }
+        else
+        {
+        if((pregunta.length())%2 == 0)
+            {
+                System.out.print("Si");
+            }
+            else
+            {
+                System.out.print("No");
+            }
         }
     }
     
