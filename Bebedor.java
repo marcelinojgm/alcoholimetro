@@ -7,25 +7,29 @@
  */
 public class Bebedor
 {
-    // instance variables - replace the example below with your own
+    // nombre de el bebedor
     private String nombre;
-    private float alcoholEnSangre;
-    private int   nivelMaximoAlcohol;
+    //alcohol en sangre
+    private int alcoholEnSangre;
+    //alcohol en sagre que admite
+    private int nivelMaximoAlcohol;
 
     /**
      * Constructor for objects of class Bebedor con nivel de alcohol en sangre cero
+     * pasandole por paramtro el alcohol que puede beber y su nombre
      */
-    public Bebedor()
+    public Bebedor(String nombre ,int nivelMaximoAlcohol)
     {
+        this.nombre = nombre;
         this.alcoholEnSangre = 0;
-        this.nivelMaximoAlcohol = 32;
+        this.nivelMaximoAlcohol = nivelMaximoAlcohol;
 
     }
     
     /**
      * retorna el nivel de alcohol en sangre
      */
-    public float getAlcoholEnSangre()
+    public int getAlcoholEnSangre()
     {
         return alcoholEnSangre;
     }
