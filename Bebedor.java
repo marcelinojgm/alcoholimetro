@@ -35,7 +35,14 @@ public class Bebedor
      */
     public void bebeCopa(Cubata nombreCopa)
     {
-        alcoholEnSangre = alcoholEnSangre + nombreCopa.getPorAlcohol();
+        if (alcoholEnSangre >= nivelMaximoAlcohol)
+        {
+            System.out.print("lo siento nopueedo beber mas");
+        }
+        else
+        {
+            alcoholEnSangre = alcoholEnSangre + nombreCopa.getPorAlcohol();
+        }
     }
     
     
