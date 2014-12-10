@@ -12,7 +12,7 @@ public class Cubata
     //nombre de la copa
     private String nombreCopa;
     //porcentaje de alcohol de la copa
-    private float    porAlcohol;
+    private float  porAlcohol;
     
     /**
      * Constructor que crea una copa 
@@ -31,6 +31,6 @@ public class Cubata
       */
     public float getPorAlcohol()
     {
-     return porAlcohol;
+     return this.porAlcohol;
     }
 }

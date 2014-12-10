@@ -1,6 +1,6 @@
 
 /**
- Ssimula una persona bebedora que toma copas.
+Ssimula una persona bebedora que toma copas.
  *con un nivel de alcohol en sangre 
  *y un tope de alcohol que puede tomar
  * 
@@ -44,15 +44,17 @@ public class Bebedor
      */
     public void bebeCopa(Cubata nombreCopa)
     {
-        //si su nivel de alcoholismo es igual o superior a su limite rechaza la copa
-        if (alcoholEnSangre >= nivelMaximoAlcohol)
-        {
-            System.out.print("Lo siento no puedo beber mas");
-        }
         //si esta por debajo del limite se toma la copa
-        else
+        if (alcoholEnSangre < nivelMaximoAlcohol)
         {
             alcoholEnSangre = alcoholEnSangre + nombreCopa.getPorAlcohol();
+        }
+
+        //si su nivel de alcoholismo es igual o superior a su limite rechaza la copa
+        else
+        {
+            System.out.println("Lo siento no puedo beber mas");
+
         }
     }
 
@@ -64,10 +66,10 @@ public class Bebedor
         //Si esta por encima del limite o escucha su nombre repite la frase gritando
         if((alcoholEnSangre >= nivelMaximoAlcohol) || pregunta.contains(nombre) )
         {
-            System.out.println("¡¡¡¡¡¡¡¡" + pregunta + "!!!!!!!!");
+            System.out.println("¡¡¡¡¡¡¡¡" + pregunta.toUpperCase() + "!!!!!!!!");
         }
-        
-        //si no contesta si o no en funcion del numero de caracteres que tenga la pregunta
+
+        //si no contesta si o no en funcion del numero de caracteres que tenga la pregunta        
         else
         {
             //caracteres pares
@@ -83,5 +85,36 @@ public class Bebedor
         }
     }
 
-  
+    /**
+     * retorna si esta borrqacho o no
+     */
+    public boolean borracho()
+    {
+        boolean borracho = false;
+        if(alcoholEnSangre >= nivelMaximoAlcohol)
+        {
+            borracho = true;
+        }
+        return borracho;
+    }
+
+    /**
+     * otra persona le ofrece una copa
+     * se la bebe simpre este este borracho o no
+     * si se la ofrece un borracho
+     */
+
+    public void ofrecerCopa(Bebedor ofertante, Cubata copa)
+    {
+        if (ofertante.borracho())
+        {
+            System.out.print("Ostias gracias!!");
+            alcoholEnSangre = alcoholEnSangre + copa.getPorAlcohol();
+        }
+        else
+        {
+            bebeCopa(copa);
+        }
+
+    }
 }
